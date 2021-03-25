@@ -1,3 +1,4 @@
+
 <!-- 字串大多會在前端做處理 -->
 <?php 
 $s = "lorem omofmg a df sad f asdfsda adf";
