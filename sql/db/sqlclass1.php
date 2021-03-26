@@ -13,9 +13,9 @@ $conn = @mysqli_connect($db_host, $db_user, $db_pw, $db_name)or die("資料庫�
 // 第三個 寫from 哪個資料表
 // select * from students or select name,mail from students
 
-$sql = "SELECT * FROM students";
+$sql = "SELECT * FROM students"; //取得資料
 $result = mysqli_query($conn,$sql); // 連線資料庫$conn及執行語法$sql 
-var_dump($result);//檢視會發現他是個很大的物件
+var_dump($result);//檢視會發現$result是個很大的物件 但不是正常顯示
 
 
 
