@@ -1,11 +1,6 @@
 <?php
-
-// 取得當前資料單筆資料
-require_once("sqlclass2_conn.php");
-$id = $_GET["id"];
-$sql = "SELECT * FROM students WHERE id= " . $id;  // 用 $_GET["id"]; 取得特定ID
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($result);
+include("function.php");
+$row = show($_GET["id"])
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +17,7 @@ $row = mysqli_fetch_assoc($result);
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form action="sqlclass2_update.php" method="post">
+                <form action="sqlclass3_update.php" method="post">
                     <div class="form-group">
                         <label for="name">姓名</label>
                         <input type="text" id="name" name="name" class="form-control" value="<?php echo $row["name"] ?>">
@@ -80,7 +75,7 @@ $row = mysqli_fetch_assoc($result);
                     <!-- 上面hidden 是為了修改單筆資料而設定 -->
                     <input type="submit" class="btn btn-primary" value="修改">
                     <!-- <input type="button" class="btn btn-danger" value="取消" onclick="history.back()"> -->
-                    <input type="button" class="btn btn-danger" value="取消" onclick="location.href='sqlclass2.php'">
+                    <input type="button" class="btn btn-danger" value="取消" onclick="location.href='sqlclass3.php'">
                 </form>
             </div>
         </div>
