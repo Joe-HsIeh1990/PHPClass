@@ -1,0 +1,47 @@
+長文文章在創建資料表時不要用varchar
+用text
+
+兩個相同的資料表資料要互相同步的話 在預設值那邊設定 1
+
+
+mac 預設值較為謹慎須將所有資料表東西拿出來
+
+在blog 資料表內的 cate_id  要為了他做資料表 後續作資料表
+
+//slug的用意是英文
+
+分類要寫個function 較category
+
+如何結合再一起 
+
+結合資料
+
+cate_id 原本是1 現在做結合 先把其中一個改成2
+
+//下面為將兩個資料表做連結 blog.cate_id = category.id
+
+SELECT * FROM blog LEFT JOIN category ON blog.cate_id = category.id //
+
+SELECT post.*,category.title,category.slug FROM blog LEFT JOIN category ON blog.cate_id = category.id //主要寫法 合併  寫在post
+
+有left 就有right或者 單純寫john 看起來其實差不多
+
+大概概念是 兩個圓圈重疊部分 假設左邊是blog 右邊是category 的話
+
+寫left 一開始的blog 都會包含 所以category 只有被選定的會出現
+
+假設只選Join不寫左右的話 他會出現我方指定的內容 其餘內容則部會
+
+希望在新增文章的時候 可以新增分類
+
+
+豐富撰寫時文字的樣式 CKEEDITOR 4 正常都用cdn 除非要客製化 
+<script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script> 
+
+
+
+會員管理 
+
+先到members 新增權限 
+
+點結構 level  tinyint  預設為1  ((1當成一班會員  預設0 ((管理員

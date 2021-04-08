@@ -8,7 +8,7 @@ try {
     $sql_check = "SELECT * FROM members WHERE user = ?";
     $stmt_check = $pdo->prepare($sql_check);
     $stmt_check->execute([$user]);
-    $row_count = $stmt_check->rowCount();
+    $row_count = $stmt_check->rowCount();  //假如是1的話 就是資料表中有相同的內容
     if ($stmt_check->rowCount() > 0) {
         echo  "帳號已被使用";
     } else {
